@@ -35,7 +35,11 @@ gem install flame_deploy_toys
 
 ```ruby
 require 'flame_deploy_toys'
-expand FlameDeployToys::Template
+expand FlameDeployToys::Template,
+  config_dir_proc: (proc do
+    require "#{context_directory}/config/config"
+    MyProject::Application.config[:config_dir]
+  end)
 ```
 
 ## Development

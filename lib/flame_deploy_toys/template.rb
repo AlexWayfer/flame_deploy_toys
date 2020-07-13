@@ -7,7 +7,13 @@ module FlameDeployToys
 	class Template
 		include Toys::Template
 
-		on_expand do
+		attr_reader :config_dir_proc
+
+		def initialize(config_dir_proc:)
+			@config_dir_proc = config_dir_proc
+		end
+
+		on_expand do |template|
 			tool :deploy do
 				desc 'Deploy to servers'
 
@@ -23,10 +29,14 @@ module FlameDeployToys
 
 				optional_arg :branch, default: :master
 
-				def run
+				to_run do
 					require 'yaml'
 
-					servers = YAML.load_file "#{context_directory}/config/deploy.yml"
+					config_dir = instance_exec(&template.config_dir_proc)
+
+					config_file = Dir[File.join(config_dir, 'deploy.y{a,}ml')].first
+
+					servers = YAML.load_file config_file
 
 					servers.each do |server|
 						update_command = "cd #{server[:path]} && exe/update.sh #{branch}"
