@@ -34,12 +34,16 @@ gem install flame_deploy_toys
 ## Usage
 
 ```ruby
+## .toys/.toys.rb
 require 'flame_deploy_toys'
-expand FlameDeployToys::Template,
-  config_dir_proc: (proc do
-    require "#{context_directory}/config/config"
-    MyProject::Application.config[:config_dir]
-  end)
+expand FlameDeployToys::Template, config_dir: "#{__dir__}/../config"
+```
+
+Then it will look for `deploy.yaml` file in config directory with such structure:
+
+```yaml
+- :ssh: 'server alias from ~/.ssh/config (or user@host)'
+  :path: '/path/to/root/of/project'
 ```
 
 ## Development
