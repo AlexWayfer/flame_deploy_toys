@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.4.0 (2021-10-29)
+
+*   Update dependencies.
+*   Add Ruby 3.0 for CI.
+
 ## 0.3.0 (2020-08-23)
 
 *   Update `toys`.
