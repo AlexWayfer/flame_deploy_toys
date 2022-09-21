@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.6.0 (2022-09-21)
+
+*   Remove default value for updating branch.
+    It can be `master`, `main`, `trunc`, etc.
+    Use current on server.
+*   Enable interactive shell for updating.
+    1. Load `.bashrc`.
+    2. It seems intuitive for possibilities like editing changed config files.
+*   Update development dependencies.
+
 ## 0.5.0 (2022-03-03)
 
 *   Drop Ruby 2.5 support.
