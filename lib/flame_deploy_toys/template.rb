@@ -21,13 +21,13 @@ module FlameDeployToys
 					Command for deploy code from git to servers
 
 					Example:
-						Update from git master branch
+						Update from default git branch
 							toys deploy
-						Update from git development branch
+						Update from specific git branch
 							toys deploy development
 				DESC
 
-				optional_arg :branch, default: :master
+				optional_arg :branch, default: nil
 
 				include :exec, exit_on_nonzero_status: true, log_level: Logger::UNKNOWN
 
