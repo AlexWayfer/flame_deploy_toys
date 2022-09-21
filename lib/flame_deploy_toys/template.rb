@@ -40,7 +40,7 @@ module FlameDeployToys
 
 					servers.each do |server|
 						update_command = "cd #{server[:path]} && exe/update.sh #{branch}"
-						sh "ssh -t #{server[:ssh]} 'bash --login -c \"#{update_command}\"'"
+						sh "ssh -t #{server[:ssh]} 'bash --login -i -c \"#{update_command}\"'"
 					end
 				end
 			end
