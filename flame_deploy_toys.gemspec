@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
 	spec.required_ruby_version = '>= 2.6', '< 4'
 
-	spec.add_runtime_dependency 'toys-core', '~> 0.13.0'
+	spec.add_runtime_dependency 'toys-core', '~> 0.14.1'
 
 	spec.add_development_dependency 'pry-byebug', '~> 3.9'
 
