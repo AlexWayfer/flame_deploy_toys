@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.7.0 (2022-10-22)
+
+*   Update `toys-core`.
+*   Update `rubocop`.
+*   Improve CI.
+*   Update badges in README.
+
 ## 0.6.0 (2022-09-21)
 
 *   Remove default value for updating branch.
