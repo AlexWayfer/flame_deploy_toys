@@ -32,5 +32,5 @@ Gem::Specification.new do |spec|
 
 	spec.required_ruby_version = '>= 2.7', '< 4'
 
-	spec.add_runtime_dependency 'toys-core', '~> 0.14.2'
+	spec.add_runtime_dependency 'toys-core', '~> 0.15.2'
 end
